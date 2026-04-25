@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/review-result.schema.json",
+  "title": "ReviewResultMessage",
+  "allOf": [
+    {
+      "$ref": "./base-message.schema.json"
+    }
+  ],
+  "type": "object",
+  "required": [
+    "status",
+    "findings",
+    "recommended_next_action"
+  ],
+  "properties": {
+    "message_type": {
+      "const": "REVIEW_RESULT"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "PASS_WITH_NOTES",
+        "CHANGES_REQUESTED",
+        "FAIL"
+      ]
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "severity",
+          "message"
+        ],
+        "properties": {
+          "severity": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "recommended_next_action": {
+      "type": "string"
+    }
+  },
+  "unevaluatedProperties": false
+}

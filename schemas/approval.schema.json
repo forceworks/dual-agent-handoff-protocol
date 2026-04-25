@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/approval.schema.json",
+  "title": "ApprovalMessage",
+  "allOf": [
+    {
+      "$ref": "./base-message.schema.json"
+    }
+  ],
+  "type": "object",
+  "required": [
+    "status"
+  ],
+  "properties": {
+    "message_type": {
+      "const": "APPROVAL"
+    },
+    "status": {
+      "type": "string",
+      "const": "APPROVED"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "approved_revision": {
+      "type": "string"
+    }
+  },
+  "unevaluatedProperties": false
+}

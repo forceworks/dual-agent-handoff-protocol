@@ -1,0 +1,30 @@
+{
+  "name": "dual-agent-handoff-protocol",
+  "version": "0.1.0",
+  "description": "A local-first coordination kit for two coding agents sharing the same project folder.",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "node dist/test.js",
+    "validate": "node dist/example.js"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "codex",
+    "claude",
+    "handoff",
+    "workflow",
+    "coordination"
+  ],
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.18",
+    "typescript": "^5.8.3"
+  }
+}

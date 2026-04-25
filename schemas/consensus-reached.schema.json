@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/consensus-reached.schema.json",
+  "title": "ConsensusReachedMessage",
+  "allOf": [
+    {
+      "$ref": "./base-message.schema.json"
+    }
+  ],
+  "type": "object",
+  "required": [
+    "body",
+    "implementation_ready"
+  ],
+  "properties": {
+    "message_type": {
+      "const": "CONSENSUS_REACHED"
+    },
+    "body": {
+      "type": "string",
+      "minLength": 1
+    },
+    "implementation_ready": {
+      "type": "boolean",
+      "const": true
+    }
+  },
+  "unevaluatedProperties": false
+}

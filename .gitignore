@@ -1,0 +1,5 @@
+node_modules/
+dist/
+handoffs/
+smoke-test-project/
+.claude/settings.local.json

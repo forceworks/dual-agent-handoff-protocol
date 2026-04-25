@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/implementation-result.schema.json",
+  "title": "ImplementationResultMessage",
+  "allOf": [
+    {
+      "$ref": "./base-message.schema.json"
+    }
+  ],
+  "type": "object",
+  "required": [
+    "status",
+    "files_changed",
+    "validation"
+  ],
+  "properties": {
+    "message_type": {
+      "const": "IMPLEMENTATION_RESULT"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "COMPLETED",
+        "PARTIAL",
+        "BLOCKED",
+        "ABORTED"
+      ]
+    },
+    "files_changed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "summary_of_changes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "validation": {
+      "type": "object",
+      "required": [
+        "tests_run",
+        "result"
+      ],
+      "properties": {
+        "tests_run": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "result": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "known_limits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "unevaluatedProperties": false
+}

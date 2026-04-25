@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/discussion-open.schema.json",
+  "title": "DiscussionOpenMessage",
+  "allOf": [
+    {
+      "$ref": "./base-message.schema.json"
+    }
+  ],
+  "type": "object",
+  "required": [
+    "body"
+  ],
+  "properties": {
+    "message_type": {
+      "const": "DISCUSSION_OPEN"
+    },
+    "body": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "unevaluatedProperties": false
+}

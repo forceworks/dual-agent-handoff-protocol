@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/cancelled.schema.json",
+  "title": "CancelledMessage",
+  "allOf": [
+    {
+      "$ref": "./base-message.schema.json"
+    }
+  ],
+  "type": "object",
+  "required": [
+    "reason"
+  ],
+  "properties": {
+    "message_type": {
+      "const": "CANCELLED"
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "unevaluatedProperties": false
+}

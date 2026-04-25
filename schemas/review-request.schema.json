@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/review-request.schema.json",
+  "title": "ReviewRequestMessage",
+  "allOf": [
+    {
+      "$ref": "./base-message.schema.json"
+    }
+  ],
+  "type": "object",
+  "required": [
+    "context"
+  ],
+  "properties": {
+    "message_type": {
+      "const": "REVIEW_REQUEST"
+    },
+    "context": {
+      "type": "string",
+      "minLength": 1,
+      "description": "What to look at and why — be specific enough that the reviewer can act without asking follow-up questions"
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "File paths, handoff IDs, or other references the reviewer should examine"
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "Specific questions to answer — if omitted, the reviewer uses their own judgment"
+    }
+  },
+  "unevaluatedProperties": false
+}

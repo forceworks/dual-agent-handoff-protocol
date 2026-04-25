@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/base-message.schema.json",
+  "title": "BaseMessage",
+  "type": "object",
+  "required": [
+    "protocol_version",
+    "task_id",
+    "message_type",
+    "from",
+    "timestamp",
+    "summary"
+  ],
+  "properties": {
+    "protocol_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "message_type": {
+      "type": "string",
+      "enum": [
+        "DISCUSSION_OPEN",
+        "DISCUSSION_REPLY",
+        "DISCUSSION_SUMMARY",
+        "CONSENSUS_REACHED",
+        "NEEDS_HUMAN_DECISION",
+        "PROPOSAL",
+        "CHALLENGE",
+        "REVISION",
+        "APPROVAL",
+        "IMPLEMENTATION_RESULT",
+        "REVIEW_RESULT",
+        "CLARIFICATION_REQUEST",
+        "CLARIFICATION_RESPONSE",
+        "CANCELLED",
+        "REVIEW_REQUEST"
+      ]
+    },
+    "from": {
+      "type": "string",
+      "enum": [
+        "codex",
+        "claude",
+        "user"
+      ]
+    },
+    "to": {
+      "type": "string",
+      "enum": [
+        "codex",
+        "claude",
+        "user"
+      ]
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/discussion-reply.schema.json",
+  "title": "DiscussionReplyMessage",
+  "allOf": [
+    {
+      "$ref": "./base-message.schema.json"
+    }
+  ],
+  "type": "object",
+  "required": [
+    "body"
+  ],
+  "properties": {
+    "message_type": {
+      "const": "DISCUSSION_REPLY"
+    },
+    "body": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "unevaluatedProperties": false
+}

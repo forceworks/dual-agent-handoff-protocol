@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/revision.schema.json",
+  "title": "RevisionMessage",
+  "allOf": [
+    {
+      "$ref": "./base-message.schema.json"
+    }
+  ],
+  "type": "object",
+  "required": [
+    "changes",
+    "supersedes"
+  ],
+  "properties": {
+    "message_type": {
+      "const": "REVISION"
+    },
+    "changes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "supersedes": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "unevaluatedProperties": false
+}
