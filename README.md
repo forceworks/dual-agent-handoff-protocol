@@ -1,4 +1,4 @@
-# Dual-Agent Handoff Protocol
+# Dual-Agent Repo Handoffs
 
 A local-first coordination kit for two coding agents sharing the same project folder.
 

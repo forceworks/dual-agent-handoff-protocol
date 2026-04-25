@@ -1,7 +1,7 @@
 {
   "name": "dual-agent-handoff-protocol",
   "version": "0.1.0",
-  "description": "A local-first coordination kit for two coding agents sharing the same project folder.",
+  "description": "Local-first repo handoffs for Claude Code and Codex, with discussion threads, consensus, implementation, and review.",
   "private": true,
   "license": "MIT",
   "type": "module",
